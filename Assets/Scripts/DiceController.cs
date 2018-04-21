@@ -37,7 +37,8 @@ public class DiceController : MonoBehaviour {
     {
         switch (diceFace){
             case 0:
-                Debug.Log("Realiza efeito " + (diceFace + 1));
+                Debug.Log("Realiza efeito " + (diceFace + 1) + ": PoneyPoop");
+                PoneyPoop();
                 break;
             case 1:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
@@ -56,4 +57,15 @@ public class DiceController : MonoBehaviour {
                 break;
         }
     }
+    public static void PoneyPoop()
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            int sorteado = Random.Range(0, GridManager.GetFreeTiles().Count);
+            GameObject poneyPoop = (GameObject)Instantiate(Resources.Load("Poop"), GridManager.GetFreeTiles()[sorteado].GetPosition(), Quaternion.identity);
+            GridManager.GetFreeTiles()[sorteado].ReceiveObject(poneyPoop);
+            GridManager.GetFreeTiles().RemoveAt(sorteado);
+        }
+    }
+        
 }

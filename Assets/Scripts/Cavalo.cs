@@ -3,104 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cavalo : Token {
-	
-	// Update is called once per frame
-	void Update () {
+
+    List<Vector3> moves = new List<Vector3>();
+    // Update is called once per frame
+    override protected void Start()
+    {
+        base.Start();
+        moves.Add(new Vector3(-2, 1, 0));
+        moves.Add(new Vector3(-1, 2, 0));
+        moves.Add(new Vector3( 1, 2, 0));
+        moves.Add(new Vector3( 2, 1, 0));
+        moves.Add(new Vector3( 2,-1, 0));
+        moves.Add(new Vector3(-1,-2, 0));
+        moves.Add(new Vector3( 1,-2, 0));
+        moves.Add(new Vector3(-2,-1, 0));
+
+    }
+    void Update () {
 	}
 
     public override void CalculateMovablePositions()
     {
-
-        List<Vector2Int> list = new List<Vector2Int>();
         //checar movimentações possiveis do cavalo
         //checar se essa posição é válida no grid
         //ver quais estão livres
         //adicionar em list
-
         //Verifica se é uma posição que existe no grid
-        if (transform.position.x + 2 < 8 )//Direita
+        for(int i = 0; i < moves.Count; i++)
         {
-            if (transform.position.y + 1 < 8)//Cima
+            if (IsValid(moves[i]))
             {
-                //Verifica se aquela posição do grid está livre
-                if (GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y + 1].IsFree() ||
-                    GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y + 1].inside.GetComponent<Token>().player != player)
+                Vector3 relative = transform.position + moves[i];
+                TileInfo tileDestination = GridManager.Tiles[(int)relative.x][(int)relative.y];
+                Token aux;
+                if (tileDestination.IsFree() || (aux = tileDestination.inside.GetComponent<Token>()) && aux.player != player)
                 {
-                    //adiciona ao vetor de posições andáveis
-                    movablePositions.Add(new Vector2Int((int)transform.position.x + 2,(int)transform.position.y + 1));
-                }
-            }
-            if(transform.position.y - 1 > -1)//Baixo
-            {
-                if (GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y - 1].IsFree() ||
-                    GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y - 1].inside.GetComponent<Token>().player != player)
-                {
-                    movablePositions.Add(new Vector2Int((int)transform.position.x + 2, (int)transform.position.y - 1));
-                }
-            }
-
-        }
-        if (transform.position.x - 2 > -1)//Esquerda
-        {
-            if (transform.position.y + 1 < 8)//Cima
-            {
-                if (GridManager.Tiles[(int)transform.position.x - 2][(int)transform.position.y + 1].IsFree() ||
-                    GridManager.Tiles[(int)transform.position.x - 2][(int)transform.position.y + 1].inside.GetComponent<Token>().player != player)
-                {
-                    movablePositions.Add(new Vector2Int((int)transform.position.x - 2, (int)transform.position.y + 1));
-                }
-            }
-            if (transform.position.y - 1 > -1)//Baixo
-            {
-                if (GridManager.Tiles[(int)transform.position.x - 2][(int)transform.position.y - 1].IsFree() ||
-                    GridManager.Tiles[(int)transform.position.x - 2][(int)transform.position.y - 1].inside.GetComponent<Token>().player != player)
-                {
-                    movablePositions.Add(new Vector2Int((int)transform.position.x - 2, (int)transform.position.y - 1));
+                    movablePositions.Add(new Vector2Int((int)relative.x, (int)relative.y));
                 }
             }
         }
-
-
-        if (transform.position.y + 2 < 8)//Cima
+    }
+    private bool IsValid(Vector3 position)
+    {
+        Vector3 temp = transform.position + position;
+        if (-1 < temp.x && temp.x < 8 &&
+            -1 < temp.y && temp.y < 8)
         {
-            if (transform.position.x + 1 < 8)//Direita
-            {
-                if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y + 2].IsFree() || 
-                    GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y + 2].inside.GetComponent<Token>().player != player)
-                {
-                    movablePositions.Add(new Vector2Int((int)transform.position.x + 1, (int)transform.position.y + 2));
-                }
-            }
-            if (transform.position.x - 1 > -1)//Esquerda
-            {
-                if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y + 2].IsFree() ||
-                    GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y + 2].inside.GetComponent<Token>().player != player)
-                {
-                    movablePositions.Add(new Vector2Int((int)transform.position.x - 1, (int)transform.position.y + 2));
-                }
-            }
-
+            return true;
         }
-        if (transform.position.y - 2 > -1)//Baixo
-        {
-            if (transform.position.x + 1 < 8)//Direita
-            {
-                if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y - 2].IsFree() ||
-                    GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y - 2].inside.GetComponent<Token>().player != player)
-                {
-                    movablePositions.Add(new Vector2Int((int)transform.position.x + 1, (int)transform.position.y - 2));
-                }
-            }
-            if (transform.position.x - 1 > -1)//Esquerda
-            {
-                if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y - 2].IsFree() ||
-                    GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y - 2].inside.GetComponent<Token>().player != player)
-                {
-                    movablePositions.Add(new Vector2Int((int)transform.position.x - 1, (int)transform.position.y - 2));
-                }
-            }
-        }
-
-
+        return false;
     }
 }

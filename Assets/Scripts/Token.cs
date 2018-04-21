@@ -10,7 +10,7 @@ abstract public class Token : MonoBehaviour {
     private List<Marker> capturable = new List<Marker>();
     public int player;
     // Use this for initialization
-	void Start () {
+	virtual protected void Start () {
         Debug.Log(this.name + " position: " + transform.position);
         if(player == 2)
         {

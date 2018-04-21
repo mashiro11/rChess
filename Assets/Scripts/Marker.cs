@@ -37,5 +37,6 @@ public class Marker : MonoBehaviour {
             Destroy(GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside);
         }
         creator.MoveTo(transform.position);
+
     }
 }

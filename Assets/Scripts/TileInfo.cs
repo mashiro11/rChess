@@ -6,10 +6,11 @@ public class TileInfo : MonoBehaviour {
 
     public GameObject inside;
     bool blocked;
+    Vector2Int position;
 
 	// Use this for initialization
 	void Start () {
-		
+ 
 	}
 	
 	// Update is called once per frame
@@ -17,13 +18,22 @@ public class TileInfo : MonoBehaviour {
 		
 	}
 
-    void ReceiveToken(GameObject token)
+    public void ReceiveObject(GameObject objectReceived)
     {
-        inside = token;
+        inside = objectReceived;
     }
 
     public bool IsFree()
     {
         return inside == null;
+    }
+
+    public void SetPosition(Vector2Int v)
+    {
+        position = v;
+    }
+    public Vector3 GetPosition()
+    {
+        return new Vector3(position.x, position.y, 0);
     }
 }

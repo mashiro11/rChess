@@ -14,6 +14,7 @@ public class GridManager : MonoBehaviour {
             for(int j = 0; j < 8; j++)
             {
                 Tiles[i].Add(new TileInfo());
+                Tiles[i][j].SetPosition(new Vector2Int(i, j));
             }
         }
         StartTable();
@@ -75,5 +76,20 @@ public class GridManager : MonoBehaviour {
             aux = Tiles[i][6].inside = (GameObject)Instantiate(Resources.Load("Peao"), new Vector3(i, 6, 0), Quaternion.identity);
             aux.GetComponent<Token>().player = 2;
         }
+    }
+    public static List<TileInfo> GetFreeTiles()
+    {
+        List<TileInfo> freeTiles = new List<TileInfo>();
+        for(int i = 0; i < Tiles.Count; i++)
+        {
+            for(int j = 0; j < Tiles[i].Count; j++)
+            {
+                if (Tiles[i][j].IsFree())
+                {
+                    freeTiles.Add(Tiles[i][j]);
+                }
+            }
+        }
+        return freeTiles;
     }
 }
