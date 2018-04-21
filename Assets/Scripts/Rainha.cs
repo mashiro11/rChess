@@ -21,7 +21,8 @@ public class Rainha : Token
             // CIMA ********************************************
             if (upFlag == false && transform.position.y + i < 8)
             {
-                if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + i].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + i].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + i].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + i));
                 }
@@ -44,7 +45,8 @@ public class Rainha : Token
             // DIREITA ********************************************
             if (rightFlag == false && transform.position.x + i < 8)
             {
-                if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x + i, (int)transform.position.y));
                 }
@@ -67,7 +69,8 @@ public class Rainha : Token
             // CIMA E DIREITA *********************************************************************
             if (upRightFlag == false && transform.position.x + i < 8 && transform.position.y + i < 8)
             {
-                if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y + i].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y + i].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y + i].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x + i, (int)transform.position.y + i));
                 }
@@ -90,7 +93,8 @@ public class Rainha : Token
             // BAIXO **********************************************
             if (downFlag == false && transform.position.y - i > -1)
             {
-                if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y - i));
 
@@ -114,7 +118,9 @@ public class Rainha : Token
             // BAIXO E DIREITA *************************************************************************
             if (downRightFlag == false && transform.position.x + i < 8 && transform.position.y - i > -1)
             {
-                if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y - i].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y - i].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y - i].inside.GetComponent<Token>().player != player)
+
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x + i, (int)transform.position.y - i));
                 }
@@ -137,7 +143,8 @@ public class Rainha : Token
             // ESQUERDA *******************************************
             if (leftFlag == false && transform.position.x - i > -1)
             {
-                if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x - i, (int)transform.position.y));
                 }
@@ -160,7 +167,8 @@ public class Rainha : Token
             // CIMA E ESQUERDA *********************************************************************
             if (upLeftFlag == false && transform.position.x - i > -1 && transform.position.y + i < 8)
             {
-                if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y + i].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y + i].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y + i].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x - i, (int)transform.position.y + i));
                 }
@@ -183,7 +191,8 @@ public class Rainha : Token
             // BAIXO E ESQUERDA ***********************************************************************
             if (downLeftFlag == false && transform.position.x - i > -1 && transform.position.y - i > -1)
             {
-                if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y - i].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y - i].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y - i].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x - i, (int)transform.position.y - i));
                 }
