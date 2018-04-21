@@ -30,13 +30,14 @@ public class DiceController : MonoBehaviour {
         diceFace = Random.Range(0, 6);
         if (diceFace == 6) diceFace -= 1;
         spriteRenderer.sprite = instance.sprites[diceFace];
+        DiceEffect();
     }
 
     public static void DiceEffect()
     {
         switch (diceFace){
             case 0:
-                Debug.Log("Realiza efeito " + (diceFace+1) );
+                Debug.Log("Realiza efeito " + (diceFace + 1));
                 break;
             case 1:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
