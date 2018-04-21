@@ -17,7 +17,8 @@ public class GridManager : MonoBehaviour {
                 Tiles[i].Add(new TileInfo());
             }
         }
-	}
+        StartTable();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,5 +31,15 @@ public class GridManager : MonoBehaviour {
             token.transform.position += position;
         }
         
+    }
+    private void StartTable()
+    {
+        //Cavalos baixo
+        Tiles[1][0].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(1, 0, 0), Quaternion.identity);
+        Tiles[6][0].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(6, 0, 0), Quaternion.identity);
+
+        //Cavalos cima
+        Tiles[1][7].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(1, 7, 0), Quaternion.identity);
+        Tiles[6][7].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(6, 7, 0), Quaternion.identity);
     }
 }
