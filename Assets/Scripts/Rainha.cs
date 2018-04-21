@@ -18,9 +18,9 @@ public class Rainha : Token
     {
         for (int i = 1; i < 8; i++)
         {
-            if (upFlag == false && transform.position.y + i < 8)//Cima
+            // CIMA ********************************************
+            if (upFlag == false && transform.position.y + i < 8)
             {
-                // chamar função que fala que aquele tile está null
                 if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + i].IsFree())
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + i));
@@ -28,7 +28,8 @@ public class Rainha : Token
 
                 else
                 {
-                    if (upFlag == true && rightFlag == true && downFlag == true && leftFlag == true)
+                    if (upFlag == true && rightFlag == true && downFlag == true && leftFlag == true && upRightFlag == true &&
+                      downRightFlag == true && upLeftFlag == true && downLeftFlag == true)
                     {
                         break;
                     }
@@ -40,7 +41,8 @@ public class Rainha : Token
                 }
             }
 
-            if (rightFlag == false && transform.position.x + i < 8)//Direita
+            // DIREITA ********************************************
+            if (rightFlag == false && transform.position.x + i < 8)
             {
                 if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y].IsFree())
                 {
@@ -49,7 +51,8 @@ public class Rainha : Token
 
                 else
                 {
-                    if (rightFlag == true && downFlag == true && leftFlag == true && upFlag == true)
+                    if (upFlag == true && rightFlag == true && downFlag == true && leftFlag == true && upRightFlag == true &&
+                      downRightFlag == true && upLeftFlag == true && downLeftFlag == true)
                     {
                         break;
                     }
@@ -61,7 +64,7 @@ public class Rainha : Token
                 }
             }
 
-            // CIMA E DIREITA
+            // CIMA E DIREITA *********************************************************************
             if (upRightFlag == false && transform.position.x + i < 8 && transform.position.y + i < 8)
             {
                 if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y + i].IsFree())
@@ -71,7 +74,8 @@ public class Rainha : Token
 
                 else
                 {
-                    if (rightFlag == true && downFlag == true && leftFlag == true && upFlag == true)
+                    if (upFlag == true && rightFlag == true && downFlag == true && leftFlag == true && upRightFlag == true &&
+                      downRightFlag == true && upLeftFlag == true && downLeftFlag == true)
                     {
                         break;
                     }
@@ -83,7 +87,8 @@ public class Rainha : Token
                 }
             }
 
-            if (downFlag == false && transform.position.y - i > -1)//Baixo
+            // BAIXO **********************************************
+            if (downFlag == false && transform.position.y - i > -1)
             {
                 if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].IsFree())
                 {
@@ -93,7 +98,8 @@ public class Rainha : Token
 
                 else
                 {
-                    if (downFlag == true && leftFlag == true && upFlag == true && rightFlag == true)
+                    if (upFlag == true && rightFlag == true && downFlag == true && leftFlag == true && upRightFlag == true &&
+                      downRightFlag == true && upLeftFlag == true && downLeftFlag == true)
                     {
                         break;
                     }
@@ -105,7 +111,7 @@ public class Rainha : Token
                 }
             }
 
-            // BAIXO E DIREITA
+            // BAIXO E DIREITA *************************************************************************
             if (downRightFlag == false && transform.position.x + i < 8 && transform.position.y - i > -1)
             {
                 if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y - i].IsFree())
@@ -115,7 +121,8 @@ public class Rainha : Token
 
                 else
                 {
-                    if (rightFlag == true && downFlag == true && leftFlag == true && upFlag == true)
+                    if (upFlag == true && rightFlag == true && downFlag == true && leftFlag == true && upRightFlag == true &&
+                      downRightFlag == true && upLeftFlag == true && downLeftFlag == true)
                     {
                         break;
                     }
@@ -127,7 +134,8 @@ public class Rainha : Token
                 }
             }
 
-            if (leftFlag == false && transform.position.x - i > -1)//Esquerda
+            // ESQUERDA *******************************************
+            if (leftFlag == false && transform.position.x - i > -1)
             {
                 if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].IsFree())
                 {
@@ -136,7 +144,8 @@ public class Rainha : Token
 
                 else
                 {
-                    if (leftFlag == true && upFlag == true && rightFlag == true && downFlag == true)
+                    if (upFlag == true && rightFlag == true && downFlag == true && leftFlag == true && upRightFlag == true &&
+                      downRightFlag == true && upLeftFlag == true && downLeftFlag == true)
                     {
                         break;
                     }
@@ -148,7 +157,7 @@ public class Rainha : Token
                 }
             }
 
-            // CIMA E ESQUERDA
+            // CIMA E ESQUERDA *********************************************************************
             if (upLeftFlag == false && transform.position.x - i > -1 && transform.position.y + i < 8)
             {
                 if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y + i].IsFree())
@@ -158,7 +167,8 @@ public class Rainha : Token
 
                 else
                 {
-                    if (rightFlag == true && downFlag == true && leftFlag == true && upFlag == true)
+                    if (upFlag == true && rightFlag == true && downFlag == true && leftFlag == true && upRightFlag == true &&
+                      downRightFlag == true && upLeftFlag == true && downLeftFlag == true)
                     {
                         break;
                     }
@@ -170,7 +180,7 @@ public class Rainha : Token
                 }
             }
 
-            // BAIXO E ESQUERDA
+            // BAIXO E ESQUERDA ***********************************************************************
             if (downLeftFlag == false && transform.position.x - i > -1 && transform.position.y - i > -1)
             {
                 if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y - i].IsFree())
@@ -180,7 +190,8 @@ public class Rainha : Token
 
                 else
                 {
-                    if (rightFlag == true && downFlag == true && leftFlag == true && upFlag == true)
+                    if (upFlag == true && rightFlag == true && downFlag == true && leftFlag == true && upRightFlag == true &&
+                      downRightFlag == true && upLeftFlag == true && downLeftFlag == true)
                     {
                         break;
                     }
@@ -191,8 +202,6 @@ public class Rainha : Token
                     }
                 }
             }
-
-
         }
         upFlag = false;
         downFlag = false;
@@ -204,6 +213,4 @@ public class Rainha : Token
         upLeftFlag = false;
         downLeftFlag = false;
     }
-
-
 }
