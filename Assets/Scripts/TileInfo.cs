@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TileInfo : MonoBehaviour {
 
-    GameObject inside = null;
-    bool blocked = false;
+    GameObject inside;
+    bool blocked;
 
 	// Use this for initialization
 	void Start () {
