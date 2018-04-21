@@ -15,6 +15,7 @@ public class Cavalo : Token {
 
     public override void CalculateMovablePositions()
     {
+
         List<Vector2Int> list = new List<Vector2Int>();
         //checar movimentações possiveis do cavalo
         //checar se essa posição é válida no grid
