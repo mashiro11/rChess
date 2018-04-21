@@ -7,6 +7,7 @@ abstract public class Token : MonoBehaviour {
     protected static Token selected = null;
     protected List<Vector2Int> movablePositions = new List<Vector2Int>();
     private List<Marker> markers = new List<Marker>();
+    private List<Marker> capturable = new List<Marker>();
     public int player;
     // Use this for initialization
 	void Start () {

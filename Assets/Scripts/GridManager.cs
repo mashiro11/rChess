@@ -36,10 +36,13 @@ public class GridManager : MonoBehaviour {
         aux = Tiles[6][0].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(6, 0, 0), Quaternion.identity);
         aux.GetComponent<Token>().player = 1;
         //Bispo baixo
-        //aux = Tiles[2][0].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(2, 0, 0), Quaternion.identity);
-        //aux.GetComponent<Token>().player = 1;
-        //aux = Tiles[5][0].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(5, 0, 0), Quaternion.identity);
-        //aux.GetComponent<Token>().player = 1;
+        aux = Tiles[2][0].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(2, 0, 0), Quaternion.identity);
+        aux.GetComponent<Token>().player = 1;
+        aux = Tiles[5][0].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(5, 0, 0), Quaternion.identity);
+        aux.GetComponent<Token>().player = 1;
+        //Rainha baixo
+        aux = Tiles[3][0].inside = (GameObject)Instantiate(Resources.Load("Rainha"), new Vector3(3, 0, 0), Quaternion.identity);
+        aux.GetComponent<Token>().player = 1;
 
 
         //Torres cima
@@ -53,10 +56,14 @@ public class GridManager : MonoBehaviour {
         aux = Tiles[6][7].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(6, 7, 0), Quaternion.identity);
         aux.GetComponent<Token>().player = 2;
         //Bispo cima
-        //aux = Tiles[2][7].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(2, 7, 0), Quaternion.identity);
-        //aux.GetComponent<Token>().player = 2;
-        //aux = Tiles[5][7].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(5, 7, 0), Quaternion.identity);
-        //aux.GetComponent<Token>().player = 2;
+        aux = Tiles[2][7].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(2, 7, 0), Quaternion.identity);
+        aux.GetComponent<Token>().player = 2;
+        aux = Tiles[5][7].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(5, 7, 0), Quaternion.identity);
+        aux.GetComponent<Token>().player = 2;
+        //Rainha cima
+        aux = Tiles[3][7].inside = (GameObject)Instantiate(Resources.Load("Rainha"), new Vector3(3, 7, 0), Quaternion.identity);
+        aux.GetComponent<Token>().player = 2;
+
 
         //Peoes
         for (int i = 0; i < 8; i++)

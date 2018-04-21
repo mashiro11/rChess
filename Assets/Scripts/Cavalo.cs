@@ -23,7 +23,8 @@ public class Cavalo : Token {
             if (transform.position.y + 1 < 8)//Cima
             {
                 //Verifica se aquela posição do grid está livre
-                if (GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y + 1].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y + 1].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y + 1].inside.GetComponent<Token>().player != player)
                 {
                     //adiciona ao vetor de posições andáveis
                     movablePositions.Add(new Vector2Int((int)transform.position.x + 2,(int)transform.position.y + 1));
@@ -31,7 +32,8 @@ public class Cavalo : Token {
             }
             if(transform.position.y - 1 > -1)//Baixo
             {
-                if (GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y - 1].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y - 1].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y - 1].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x + 2, (int)transform.position.y - 1));
                 }
@@ -42,14 +44,16 @@ public class Cavalo : Token {
         {
             if (transform.position.y + 1 < 8)//Cima
             {
-                if (GridManager.Tiles[(int)transform.position.x - 2][(int)transform.position.y + 1].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x - 2][(int)transform.position.y + 1].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x - 2][(int)transform.position.y + 1].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x - 2, (int)transform.position.y + 1));
                 }
             }
             if (transform.position.y - 1 > -1)//Baixo
             {
-                if (GridManager.Tiles[(int)transform.position.x - 2][(int)transform.position.y - 1].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x - 2][(int)transform.position.y - 1].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x - 2][(int)transform.position.y - 1].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x - 2, (int)transform.position.y - 1));
                 }
@@ -61,14 +65,16 @@ public class Cavalo : Token {
         {
             if (transform.position.x + 1 < 8)//Direita
             {
-                if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y + 2].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y + 2].IsFree() || 
+                    GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y + 2].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x + 1, (int)transform.position.y + 2));
                 }
             }
             if (transform.position.x - 1 > -1)//Esquerda
             {
-                if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y + 2].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y + 2].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y + 2].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x - 1, (int)transform.position.y + 2));
                 }
@@ -79,14 +85,16 @@ public class Cavalo : Token {
         {
             if (transform.position.x + 1 < 8)//Direita
             {
-                if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y - 2].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y - 2].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y - 2].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x + 1, (int)transform.position.y - 2));
                 }
             }
             if (transform.position.x - 1 > -1)//Esquerda
             {
-                if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y - 2].IsFree())
+                if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y - 2].IsFree() ||
+                    GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y - 2].inside.GetComponent<Token>().player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x - 1, (int)transform.position.y - 2));
                 }
