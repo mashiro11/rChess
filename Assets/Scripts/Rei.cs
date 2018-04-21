@@ -9,7 +9,8 @@ public class Rei : Token
         // CIMA ************************
         if (transform.position.y + 1 < 8)
         {
-            if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + 1].IsFree())
+            if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + 1].IsFree() ||
+                GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + 1].inside.GetComponent<Token>().player != player)
             {
                 movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + 1));
             }
@@ -18,7 +19,8 @@ public class Rei : Token
         // BAIXO *************************
         if (transform.position.y - 1 > -1)
         {
-            if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - 1].IsFree())
+            if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - 1].IsFree() ||
+                GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - 1].inside.GetComponent<Token>().player != player)
             {
                 movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y - 1));
 
@@ -28,7 +30,8 @@ public class Rei : Token
         // DIREITA *********************
         if (transform.position.x + 1 < 8)
         {
-            if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y].IsFree())
+            if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y].IsFree() ||
+                GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y].inside.GetComponent<Token>().player != player)
             {
                 movablePositions.Add(new Vector2Int((int)transform.position.x + 1, (int)transform.position.y));
             }
@@ -37,7 +40,8 @@ public class Rei : Token
         // ESQUERDA **********************
         if (transform.position.x - 1 > -1)
         {
-            if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y].IsFree())
+            if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y].IsFree() ||
+                GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y].inside.GetComponent<Token>().player != player)
             {
                 movablePositions.Add(new Vector2Int((int)transform.position.x - 1, (int)transform.position.y));
             }
@@ -46,7 +50,8 @@ public class Rei : Token
         // CIMA E DIREITA ***********************************************
         if (transform.position.x + 1 < 8 && transform.position.y + 1 < 8)
         {
-            if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y + 1].IsFree())
+            if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y + 1].IsFree() ||
+                GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y + 1].inside.GetComponent<Token>().player != player)
             {
                 movablePositions.Add(new Vector2Int((int)transform.position.x + 1, (int)transform.position.y + 1));
             }            
@@ -55,7 +60,8 @@ public class Rei : Token
         // CIMA E ESQUERDA **********************************************
         if (transform.position.x - 1 > -1 && transform.position.y + 1 < 8)
         {
-            if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y + 1].IsFree())
+            if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y + 1].IsFree() ||
+                GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y + 1].inside.GetComponent<Token>().player != player)
             {
                 movablePositions.Add(new Vector2Int((int)transform.position.x - 1, (int)transform.position.y + 1));
             }
@@ -64,7 +70,8 @@ public class Rei : Token
         // BAIXO E ESQUERDA **********************************************
         if (transform.position.x - 1 > -1 && transform.position.y - 1 > -1)
         {
-            if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y - 1].IsFree())
+            if (GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y - 1].IsFree() ||
+                GridManager.Tiles[(int)transform.position.x - 1][(int)transform.position.y - 1].inside.GetComponent<Token>().player != player)
             {
                 movablePositions.Add(new Vector2Int((int)transform.position.x - 1, (int)transform.position.y - 1));
             }
@@ -74,7 +81,8 @@ public class Rei : Token
         // BAIXO E DIREITA **********************************************
         if (transform.position.x + 1 < 8 && transform.position.y - 1 > -1)
         {
-            if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y - 1].IsFree())
+            if (GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y - 1].IsFree() ||
+                GridManager.Tiles[(int)transform.position.x + 1][(int)transform.position.y - 1].inside.GetComponent<Token>().player != player)
             {
                 movablePositions.Add(new Vector2Int((int)transform.position.x + 1, (int)transform.position.y - 1));
             }
