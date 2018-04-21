@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4544268190039586}
   - component: {fileID: 212819902879151324}
   - component: {fileID: 61474561987419354}
-  - component: {fileID: 114857439004729512}
+  - component: {fileID: 114384960516730094}
   m_Layer: 0
   m_Name: Cavalo
   m_TagString: Untagged
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.84375, y: 0.875}
   m_EdgeRadius: 0
---- !u!114 &114857439004729512
+--- !u!114 &114384960516730094
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1647978347612348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 829dbaef4462bd0498b9b2b9aa6fc4d1, type: 3}
+  m_Script: {fileID: 11500000, guid: c3fbb5f164d05bc4891cf475e952798b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: 0

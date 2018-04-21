@@ -27,6 +27,18 @@ public class Peao : Token {
                     }
                 }
 
+                // COMER PARA DIREITA E PARA CIMA
+                if (transform.position.x + 1 < 8 && transform.position.y + 1 < 8)
+                {
+                    /*
+                    if (!GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + sign * i].IsFree() &&
+                        
+                         GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].inside.GetComponent<Token>().player != player)
+
+                        GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].IsFree() || inside.GetComponent<Token>().player != player
+                    movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + sign * i)); */
+                }
+
                 // limitar o deslocamento do peao para a esquerda
                 if (transform.position.x - 1 > -1)//Esquerda
                 {
@@ -37,6 +49,8 @@ public class Peao : Token {
                         movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + sign*i));
                     }
                 }
+
+
             }
         }
     }
