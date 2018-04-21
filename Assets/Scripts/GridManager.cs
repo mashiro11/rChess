@@ -26,10 +26,10 @@ public class GridManager : MonoBehaviour {
     {
         GameObject aux;
         //Torres baixo
-        //aux = Tiles[0][0].inside = (GameObject)Instantiate(Resources.Load("Torre"), new Vector3(0, 0, 0), Quaternion.identity);
-        //aux.GetComponent<Token>().player = 1;
-        //aux = Tiles[7][0].inside = (GameObject)Instantiate(Resources.Load("Torre"), new Vector3(7, 0, 0), Quaternion.identity);
-        //aux.GetComponent<Token>().player = 1;
+        aux = Tiles[0][0].inside = (GameObject)Instantiate(Resources.Load("Torre"), new Vector3(0, 0, 0), Quaternion.identity);
+        aux.GetComponent<Token>().player = 1;
+        aux = Tiles[7][0].inside = (GameObject)Instantiate(Resources.Load("Torre"), new Vector3(7, 0, 0), Quaternion.identity);
+        aux.GetComponent<Token>().player = 1;
         //Cavalos baixo
         aux = Tiles[1][0].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(1, 0, 0), Quaternion.identity);
         aux.GetComponent<Token>().player = 1;
@@ -43,16 +43,16 @@ public class GridManager : MonoBehaviour {
 
 
         //Torres cima
-        //aux = Tiles[0][7].inside = (GameObject)Instantiate(Resources.Load("Torre"), new Vector3(0, 0, 0), Quaternion.identity);
-        //aux.GetComponent<Token>().player = 2;
-        //aux = Tiles[7][7].inside = (GameObject)Instantiate(Resources.Load("Torre"), new Vector3(7, 0, 0), Quaternion.identity);
-        //aux.GetComponent<Token>().player = 2;
+        aux = Tiles[0][7].inside = (GameObject)Instantiate(Resources.Load("Torre"), new Vector3(0, 7, 0), Quaternion.identity);
+        aux.GetComponent<Token>().player = 2;
+        aux = Tiles[7][7].inside = (GameObject)Instantiate(Resources.Load("Torre"), new Vector3(7, 7, 0), Quaternion.identity);
+        aux.GetComponent<Token>().player = 2;
         //Cavalos cima
         aux = Tiles[1][7].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(1, 7, 0), Quaternion.identity);
         aux.GetComponent<Token>().player = 2;
         aux = Tiles[6][7].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(6, 7, 0), Quaternion.identity);
         aux.GetComponent<Token>().player = 2;
-        //Bispo baixo
+        //Bispo cima
         //aux = Tiles[2][7].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(2, 7, 0), Quaternion.identity);
         //aux.GetComponent<Token>().player = 2;
         //aux = Tiles[5][7].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(5, 7, 0), Quaternion.identity);
@@ -62,9 +62,11 @@ public class GridManager : MonoBehaviour {
         for (int i = 0; i < 8; i++)
         {
             //baixo
-            //aux = Tiles[i][1].inside = (GameObject)Instantiate(Resources.Load("Peao"), new Vector3(i, 1, 0), Quaternion.identity);
+            aux = Tiles[i][1].inside = (GameObject)Instantiate(Resources.Load("Peao"), new Vector3(i, 1, 0), Quaternion.identity);
+            aux.GetComponent<Token>().player = 1;
             //cima
-            //aux = Tiles[i][6].inside = (GameObject)Instantiate(Resources.Load("Peao"), new Vector3(i, 6, 0), Quaternion.identity);
+            aux = Tiles[i][6].inside = (GameObject)Instantiate(Resources.Load("Peao"), new Vector3(i, 6, 0), Quaternion.identity);
+            aux.GetComponent<Token>().player = 2;
         }
     }
 }

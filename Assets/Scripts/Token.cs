@@ -10,6 +10,11 @@ abstract public class Token : MonoBehaviour {
     public int player;
     // Use this for initialization
 	void Start () {
+        Debug.Log(this.name + " position: " + transform.position);
+        if(player == 2)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 0.5f);
+        }
 		
 	}
 	
@@ -32,6 +37,11 @@ abstract public class Token : MonoBehaviour {
 
     protected void ShowMovablePosition()
     {
+        if (movablePositions.Count == 0)
+        {
+            selected = null;
+            return;
+        }
         Vector3 v = new Vector3();
         for(int i = 0; i < movablePositions.Count; i++)
         {

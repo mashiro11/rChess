@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cavalo : Token {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
