@@ -30,13 +30,31 @@ public class Peao : Token {
                 // COMER PARA DIREITA E PARA CIMA
                 if (transform.position.x + 1 < 8 && transform.position.y + 1 < 8)
                 {
-                    /*
-                    if (!GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + sign * i].IsFree() &&
-                        
-                         GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].inside.GetComponent<Token>().player != player)
+                    Vector3 relative = transform.position + new Vector3(1,1,0);
+                    TileInfo tileDestination = GridManager.Tiles[(int)relative.x][(int)relative.y];
+                    Token aux;
+                    // se a possível posição de destino está ocupada &&
+                    // se o meu tile possui um objeto do tipo token &&
+                    // se o token aux não for do player &&
+                    if (!tileDestination.IsFree() && (aux = tileDestination.inside.GetComponent<Token>()) && aux.player != player)
+                    {
+                        movablePositions.Add(new Vector2Int((int)relative.x, (int)relative.y));
+                    }
+                }
 
-                        GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].IsFree() || inside.GetComponent<Token>().player != player
-                    movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + sign * i)); */
+                // COMER PARA ESQUERDA E PARA CIMA
+                if (transform.position.x - 1 > -1 && transform.position.y + 1 < 8)
+                {
+                    Vector3 relative = transform.position + new Vector3(-1, 1, 0);
+                    TileInfo tileDestination = GridManager.Tiles[(int)relative.x][(int)relative.y];
+                    Token aux;
+                    // se a possível posição de destino está ocupada &&
+                    // se o meu tile possui um objeto do tipo token &&
+                    // se o token aux não for do player &&
+                    if (!tileDestination.IsFree() && (aux = tileDestination.inside.GetComponent<Token>()) && aux.player != player)
+                    {
+                        movablePositions.Add(new Vector2Int((int)relative.x, (int)relative.y));
+                    }
                 }
 
                 // limitar o deslocamento do peao para a esquerda
