@@ -22,8 +22,6 @@ public class Marker : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        Debug.Log("Oe");
-        creator.transform.position = this.transform.position;
-        creator.RemoveMarkers();
+        creator.MoveTo(transform.position);
     }
 }

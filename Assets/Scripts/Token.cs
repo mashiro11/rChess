@@ -49,4 +49,11 @@ abstract public class Token : MonoBehaviour {
         selected = null;
         movablePositions.Clear();
     }
+    public void MoveTo(Vector3 v)
+    {
+        GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside = null;
+        transform.position = v;
+        GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside = gameObject;
+        RemoveMarkers();
+    }
 }

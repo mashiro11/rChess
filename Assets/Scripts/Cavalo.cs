@@ -20,12 +20,16 @@ public class Cavalo : Token {
         //checar se essa posição é válida no grid
         //ver quais estão livres
         //adicionar em list
+
+        //Verifica se é uma posição que existe no grid
         if (transform.position.x + 2 < 8 )//Direita
         {
             if (transform.position.y + 1 < 8)//Cima
             {
+                //Verifica se aquela posição do grid está livre
                 if (GridManager.Tiles[(int)transform.position.x + 2][(int)transform.position.y + 1].IsFree())
                 {
+                    //adiciona ao vetor de posições andáveis
                     movablePositions.Add(new Vector2Int((int)transform.position.x + 2,(int)transform.position.y + 1));
                 }
             }
