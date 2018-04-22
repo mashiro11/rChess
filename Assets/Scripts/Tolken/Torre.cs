@@ -8,13 +8,19 @@ public class Torre : Token
     bool downFlag = false;
     bool rightFlag = false;
     bool leftFlag = false;
+    List<Vector3> moves;
     override protected void Start()
     {
         base.Start();
+        moves = new List<Vector3>();
+        moves.Add(new Vector3(1, 0));
+        moves.Add(new Vector3(-1, 0));
+        moves.Add(new Vector3(0, 1));
+        moves.Add(new Vector3(0,-1));
     }
 
     public override void CalculateMovablePositions()
-    {
+    {   
         Token aux;
         for (int i = 1; i < 8; i++)
         {

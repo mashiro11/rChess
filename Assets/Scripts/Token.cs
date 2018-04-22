@@ -67,6 +67,11 @@ abstract public class Token : MonoBehaviour {
         GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside = gameObject;
         selected = null;
         RemoveMarkers();
+
+        if (IsCheck())
+        {
+            Debug.Log("Xeque!");
+        }
         TurnManager.LastState = TurnManager.CurrentState;
         Debug.Log("O turno do: " + TurnManager.CurrentState + "acabou");
         TurnManager.CurrentState = TurnManager.TurnState.DiceRoll;
@@ -80,6 +85,27 @@ abstract public class Token : MonoBehaviour {
         {
             return true;
         }
+        return false;
+    }
+    bool IsCheck()
+    {
+        Debug.Log("Testando o Check");
+        CalculateMovablePositions();
+        for(int i = 0; i < movablePositions.Count; i++)
+        {
+            Debug.Log("Movable: " + movablePositions[i]);
+        }
+        Token aux;
+        for (int i = 0; i < movablePositions.Count; i++)
+        {
+            if(!GridManager.Tiles[movablePositions[i].x][movablePositions[i].y].IsFree() &&
+               (aux = GridManager.Tiles[movablePositions[i].x][movablePositions[i].y].inside.GetComponent<Rei>()))
+            {
+                movablePositions.Clear();
+                return true;
+            }
+        }
+        movablePositions.Clear();
         return false;
     }
 }
