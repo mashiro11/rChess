@@ -75,7 +75,7 @@ public class DiceController : MonoBehaviour {
     {
         for(int i = 0; i < 3; i++)
         {
-            int sorteado = Random.Range(0, GridManager.GetFreeTiles().Count);
+            int sorteado = Random.Range(0, GridManager.GetFreeTiles().Count-1);
             GameObject poneyPoop = (GameObject)Instantiate(Resources.Load("Poop"), GridManager.GetFreeTiles()[sorteado].GetPosition(), Quaternion.identity);
             GridManager.GetFreeTiles()[sorteado].ReceiveObject(poneyPoop);
             GridManager.GetFreeTiles().RemoveAt(sorteado);

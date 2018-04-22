@@ -83,49 +83,49 @@ public class GridManager : MonoBehaviour {
         Tokens[1].Add(aux.GetComponent<Token>());
         Tokens[1][1].player = 2;
 
-        /*
+        
         //Cavalos cima
-        aux = Tiles[7][1].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(1, 7, 0), Quaternion.identity);
+        aux = Tiles[1][7].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(1, 7, 0), Quaternion.identity);
         Tokens[1].Add(aux.GetComponent<Token>());
         Tokens[1][2].player = 2;
 
-        aux = Tiles[7][6].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(6, 7, 0), Quaternion.identity);
+        aux = Tiles[6][7].inside = (GameObject)Instantiate(Resources.Load("Cavalo"), new Vector3(6, 7, 0), Quaternion.identity);
         Tokens[1].Add(aux.GetComponent<Token>());
         Tokens[1][3].player = 2;
-
+        
         //Bispo cima
-        aux = Tiles[7][2].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(2, 7, 0), Quaternion.identity);
+        aux = Tiles[2][7].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(2, 7, 0), Quaternion.identity);
         Tokens[1].Add(aux.GetComponent<Token>());
         Tokens[1][4].player = 2;
 
-        aux = Tiles[7][5].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(5, 7, 0), Quaternion.identity);
+        aux = Tiles[5][7].inside = (GameObject)Instantiate(Resources.Load("Bispo"), new Vector3(5, 7, 0), Quaternion.identity);
         Tokens[1].Add(aux.GetComponent<Token>());
         Tokens[1][5].player = 2;
         
         //Rainha cima
-        aux = Tiles[7][3].inside = (GameObject)Instantiate(Resources.Load("Rainha"), new Vector3(3, 7, 0), Quaternion.identity);
+        aux = Tiles[3][7].inside = (GameObject)Instantiate(Resources.Load("Rainha"), new Vector3(3, 7, 0), Quaternion.identity);
         Tokens[1].Add(aux.GetComponent<Token>());
         Tokens[1][6].player = 2;
 
         //Rei cima
-        aux = Tiles[7][4].inside = (GameObject)Instantiate(Resources.Load("Rei"), new Vector3(4, 7, 0), Quaternion.identity);
+        aux = Tiles[4][7].inside = (GameObject)Instantiate(Resources.Load("Rei"), new Vector3(4, 7, 0), Quaternion.identity);
         Tokens[1].Add(aux.GetComponent<Token>());
         Tokens[1][7].player = 2;
-
-
-        //Peoes
         
+        
+        //Peoes
         for (int i = 0; i < 8; i++)
         {
             //baixo
-            aux = Tiles[1][i].inside = (GameObject)Instantiate(Resources.Load("Peao"), new Vector3(i, 1, 0), Quaternion.identity);
-            Tokens[1].Add(aux.GetComponent<Token>());
-            Tokens[1][i].player = 1;
+            aux = Tiles[i][1].inside = (GameObject)Instantiate(Resources.Load("Peao"), new Vector3(i, 1, 0), Quaternion.identity);
+            Tokens[0].Add(aux.GetComponent<Token>());
+            Tokens[0][i+8].player = 1;
             //cima
-            aux = Tiles[6][i].inside = (GameObject)Instantiate(Resources.Load("Peao"), new Vector3(i, 6, 0), Quaternion.identity);
+            aux = Tiles[i][6].inside = (GameObject)Instantiate(Resources.Load("Peao"), new Vector3(i, 6, 0), Quaternion.identity);
             Tokens[1].Add(aux.GetComponent<Token>());
-            Tokens[1][i].player = 2;
-        }*/
+            Tokens[1][i + 8].player = 2;
+            Debug.Log("i: " + i);
+        }
 
         for(int i = 0; i < Tiles.Count; i++)
         {

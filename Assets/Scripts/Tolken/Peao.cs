@@ -29,6 +29,10 @@ public class Peao : Token {
                         //adicionar todas possíveis posições andáveis à lista de Vector2Int
                         movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + sign*i));
                     }
+                    else
+                    {
+                        break;
+                    }
                 }
 
                 // COMER PARA DIREITA E PARA CIMA

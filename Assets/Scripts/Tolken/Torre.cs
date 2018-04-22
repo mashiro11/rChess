@@ -15,14 +15,19 @@ public class Torre : Token
 
     public override void CalculateMovablePositions()
     {
+        Token aux;
         for (int i = 1; i < 8; i++)
         {
             if (upFlag == false && transform.position.y + i < 8)//Cima
             {
-                if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + i].IsFree() ||
-                    GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + i]. inside.GetComponent<Token>().player != player)
+                if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + i].IsFree())
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + i));
+                }
+                 else if((aux = GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + i].inside.GetComponent<Token>()) && aux.player != player)
+                {
+                    movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + i));
+                    upFlag = true;
                 }
 
                 else
@@ -45,7 +50,7 @@ public class Torre : Token
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x + i, (int)transform.position.y));
                 }
-                else if(GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y].inside.GetComponent<Token>().player != player)
+                else if((aux = GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y].inside.GetComponent<Token>()) && aux.player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x + i, (int)transform.position.y));
                     rightFlag = true;
@@ -71,7 +76,7 @@ public class Torre : Token
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y - i));
                 } 
-                else if(GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].inside.GetComponent<Token>().player != player)
+                else if((aux=GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].inside.GetComponent<Token>()) && aux.player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y - i));
                     downFlag = true;
@@ -90,14 +95,14 @@ public class Torre : Token
                     }
                 }
             }
-
+            
             if (leftFlag == false && transform.position.x - i > -1)//Esquerda
             {
                 if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].IsFree())
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x - i, (int)transform.position.y));
                 }
-                else if(GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].inside.GetComponent<Token>().player != player)
+                else if((aux=GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].inside.GetComponent<Token>()) && aux.player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x - i, (int)transform.position.y));
                     leftFlag = true;
