@@ -4,8 +4,37 @@ using UnityEngine;
 
 public class Rei : Token
 {
+    private List<Vector3> moves;
+    override protected void Start()
+    {
+        base.Start();
+        moves = new List<Vector3>();
+        moves.Add(new Vector3( 1, 1, 0));
+        moves.Add(new Vector3( 1, 0, 0));
+        moves.Add(new Vector3( 1,-1, 0));
+        moves.Add(new Vector3( 0,-1, 0));
+        moves.Add(new Vector3(-1,-1, 0));
+        moves.Add(new Vector3(-1, 0, 0));
+        moves.Add(new Vector3(-1, 1, 0));
+        moves.Add(new Vector3( 0, 1, 0));
+    }
     public override void CalculateMovablePositions()
     {
+        /* //ta com erro! checar deppois
+        for(int i = 0; i < moves.Count; i++)
+        {
+            if (IsValid(moves[i]))
+            {
+                Vector3 relative = transform.position + moves[i];
+                TileInfo tileDestination = GridManager.Tiles[(int)relative.y][(int)relative.x];
+                Token aux;
+                if (tileDestination.IsFree() || (aux = tileDestination.inside.GetComponent<Token>()) && aux.player != player)
+                {
+                    movablePositions.Add(new Vector2Int((int)relative.x, (int)relative.y));
+                }
+            }
+        }*/
+        
         // CIMA ************************
         if (transform.position.y + 1 < 8)
         {

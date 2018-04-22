@@ -12,11 +12,10 @@ abstract public class Token : MonoBehaviour {
     // Use this for initialization
 	virtual protected void Start () {
         Debug.Log(this.name + " position: " + transform.position);
-        if(player == 2)
+        if (player == 2)
         {
             GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 0.5f);
         }
-		
 	}
 	
     abstract public void CalculateMovablePositions();
@@ -72,5 +71,15 @@ abstract public class Token : MonoBehaviour {
         Debug.Log("O turno do: " + TurnManager.CurrentState + "acabou");
         TurnManager.CurrentState = TurnManager.TurnState.DiceRoll;
         Debug.Log("Agora os dados vão rolar");
+    }
+    protected bool IsValid(Vector3 position)
+    {
+        Vector3 temp = transform.position + position;
+        if (-1 < temp.x && temp.x < 8 &&
+            -1 < temp.y && temp.y < 8)
+        {
+            return true;
+        }
+        return false;
     }
 }

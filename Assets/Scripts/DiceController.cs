@@ -81,5 +81,10 @@ public class DiceController : MonoBehaviour {
             GridManager.GetFreeTiles().RemoveAt(sorteado);
         }
     }
+
+    public static void Dino()
+    {
+
+    }
         
 }

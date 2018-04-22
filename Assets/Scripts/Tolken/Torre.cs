@@ -8,6 +8,10 @@ public class Torre : Token
     bool downFlag = false;
     bool rightFlag = false;
     bool leftFlag = false;
+    override protected void Start()
+    {
+        base.Start();
+    }
 
     public override void CalculateMovablePositions()
     {
@@ -37,10 +41,14 @@ public class Torre : Token
 
             if (rightFlag == false && transform.position.x + i < 8)//Direita
             {
-                if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y].IsFree() ||
-                    GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y].inside.GetComponent<Token>().player != player)
+                if (GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y].IsFree())
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x + i, (int)transform.position.y));
+                }
+                else if(GridManager.Tiles[(int)transform.position.x + i][(int)transform.position.y].inside.GetComponent<Token>().player != player)
+                {
+                    movablePositions.Add(new Vector2Int((int)transform.position.x + i, (int)transform.position.y));
+                    rightFlag = true;
                 }
 
                 else
@@ -59,11 +67,14 @@ public class Torre : Token
 
             if (downFlag == false && transform.position.y - i > -1)//Baixo
             {
-                if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].IsFree() || 
-                    GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].inside.GetComponent<Token>().player != player)
+                if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].IsFree())
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y - i));
-
+                } 
+                else if(GridManager.Tiles[(int)transform.position.x][(int)transform.position.y - i].inside.GetComponent<Token>().player != player)
+                {
+                    movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y - i));
+                    downFlag = true;
                 }
 
                 else
@@ -82,10 +93,14 @@ public class Torre : Token
 
             if (leftFlag == false && transform.position.x - i > -1)//Esquerda
             {
-                if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].IsFree() ||
-                    GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].inside.GetComponent<Token>().player != player)
+                if (GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].IsFree())
                 {
                     movablePositions.Add(new Vector2Int((int)transform.position.x - i, (int)transform.position.y));
+                }
+                else if(GridManager.Tiles[(int)transform.position.x - i][(int)transform.position.y].inside.GetComponent<Token>().player != player)
+                {
+                    movablePositions.Add(new Vector2Int((int)transform.position.x - i, (int)transform.position.y));
+                    leftFlag = true;
                 }
 
                 else

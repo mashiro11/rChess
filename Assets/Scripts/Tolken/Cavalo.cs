@@ -43,14 +43,4 @@ public class Cavalo : Token {
             }
         }
     }
-    private bool IsValid(Vector3 position)
-    {
-        Vector3 temp = transform.position + position;
-        if (-1 < temp.x && temp.x < 8 &&
-            -1 < temp.y && temp.y < 8)
-        {
-            return true;
-        }
-        return false;
-    }
 }
