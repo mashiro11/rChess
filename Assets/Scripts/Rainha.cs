@@ -13,7 +13,12 @@ public class Rainha : Token
     bool downRightFlag = false;
     bool upLeftFlag = false;
     bool downLeftFlag = false;
-    
+
+    override protected void Start()
+    {
+        base.Start();
+    }
+
     public override void CalculateMovablePositions()
     {
         for (int i = 1; i < 8; i++)

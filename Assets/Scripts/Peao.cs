@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Peao : Token {
 
+    override protected void Start()
+    {
+        base.Start();
+    }
     public override void CalculateMovablePositions()
     {
         int sign = (player == 1) ? 1 : -1;
