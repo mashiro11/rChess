@@ -5,20 +5,25 @@ using UnityEngine;
 public class Marker : MonoBehaviour {
     public Token creator;
     public SpriteRenderer spriteRenderer;
+    public Sprite[] sprites;
     bool capturePosition = false;
-    // Use this for initialization
-	void Start () {
+
+
+    void Start ()
+    {
         Token aux;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].IsFree())
         {
-            spriteRenderer.color = new Color(0, 1, 0);
-        }else if ((aux = GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside.GetComponent<Token>()) &&
+            spriteRenderer.sprite = sprites[0];
+        }
+
+        else if ((aux = GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside.GetComponent<Token>()) &&
             aux.player != creator.player)
         {
             GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside.GetComponent<Token>();
-            spriteRenderer.color = new Color(1, 0, 0);
+            spriteRenderer.sprite = sprites[1];
             capturePosition = true;
         }
     }
