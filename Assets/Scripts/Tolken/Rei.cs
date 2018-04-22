@@ -20,21 +20,33 @@ public class Rei : Token
     }
     public override void CalculateMovablePositions()
     {
-        /* //ta com erro! checar deppois
         for(int i = 0; i < moves.Count; i++)
         {
             if (IsValid(moves[i]))
             {
                 Vector3 relative = transform.position + moves[i];
-                TileInfo tileDestination = GridManager.Tiles[(int)relative.y][(int)relative.x];
+                TileInfo tileDestination = GridManager.Tiles[(int)relative.x][(int)relative.y];
                 Token aux;
                 if (tileDestination.IsFree() || (aux = tileDestination.inside.GetComponent<Token>()) && aux.player != player)
                 {
                     movablePositions.Add(new Vector2Int((int)relative.x, (int)relative.y));
                 }
             }
-        }*/
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+/*
         Token aux;
+        
         // CIMA ************************
         if (transform.position.y + 1 < 8)
         {
@@ -138,6 +150,4 @@ public class Rei : Token
             {
                 movablePositions.Add(new Vector2Int((int)transform.position.x + 1, (int)transform.position.y - 1));
             }
-        }
-    }
-}
+        }*/
