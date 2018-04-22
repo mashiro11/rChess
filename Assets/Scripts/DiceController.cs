@@ -8,12 +8,14 @@ public class DiceController : MonoBehaviour {
     public Sprite[] sprites;
     public static int diceFace = 0;
     public static DiceController instance = null;
+    public static Ponei poneiScript;
 
 	void Awake () {
         if (instance == null)
         {
             instance = this;
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            poneiScript = GameObject.Find("Ponei").GetComponent<Ponei>();
         }
 	}
 	
@@ -52,33 +54,28 @@ public class DiceController : MonoBehaviour {
         switch (diceFace){
             case 0:
                 Debug.Log("Realiza efeito " + (diceFace + 1) + ": PoneyPoop");
-                PoneyPoop();
+                poneiScript.PoneiEvent();
                 break;
             case 1:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
+                poneiScript.PoneiEvent();
                 break;
             case 2:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
+                poneiScript.PoneiEvent();
                 break;
             case 3:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
+                poneiScript.PoneiEvent();
                 break;
             case 4:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
+                poneiScript.PoneiEvent();
                 break;
             case 5:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
+                poneiScript.PoneiEvent();
                 break;
-        }
-    }
-    public static void PoneyPoop()
-    {
-        for(int i = 0; i < 3; i++)
-        {
-            int sorteado = Random.Range(0, GridManager.GetFreeTiles().Count-1);
-            GameObject poneyPoop = (GameObject)Instantiate(Resources.Load("Poop"), GridManager.GetFreeTiles()[sorteado].GetPosition(), Quaternion.identity);
-            GridManager.GetFreeTiles()[sorteado].ReceiveObject(poneyPoop);
-            GridManager.GetFreeTiles().RemoveAt(sorteado);
         }
     }
 

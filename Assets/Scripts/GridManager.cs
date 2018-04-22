@@ -33,11 +33,11 @@ public class GridManager : MonoBehaviour {
         //Torres baixo
 
         List<string> Pecas = new List<string>();
-        Pecas.Add("Torre");
-        Pecas.Add("Cavalo");
-        Pecas.Add("Bispo");
-        Pecas.Add("Rainha");
-        Pecas.Add("Rei");
+        Pecas.Add("Pecas/Torre");
+        Pecas.Add("Pecas/Cavalo");
+        Pecas.Add("Pecas/Bispo");
+        Pecas.Add("Pecas/Rainha");
+        Pecas.Add("Pecas/Rei");
 
         Tokens = new List<List<Token>>();
         Tokens.Add(new List<Token>());
@@ -57,7 +57,7 @@ public class GridManager : MonoBehaviour {
             line = (line == 0) ? 1 : 6;
             for (int i = 0; i < 8; i++)
             {
-                aux = Tiles[i][line].inside = (GameObject)Instantiate(Resources.Load("Peao"), new Vector3(i, line, 0), Quaternion.identity);
+                aux = Tiles[i][line].inside = (GameObject)Instantiate(Resources.Load("Pecas/Peao"), new Vector3(i, line, 0), Quaternion.identity);
                 Tokens[j].Add(aux.GetComponent<Token>());
                 Tokens[j][Tokens[j].Count - 1].player = j + 1;
             }

@@ -6,7 +6,7 @@ public class TileInfo : MonoBehaviour {
 
     public GameObject inside;
     bool blocked;
-    Vector2Int position;
+    public Vector2Int position;
 
 	// Use this for initialization
 	void Start () {
