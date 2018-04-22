@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 9fd03217c9b597a4c922a4fa2529f60a
-timeCreated: 1524310479
+guid: b5aff1059552da74d8803b812d3da8bc
+timeCreated: 1524422053
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: dado_0
-    21300002: dado_1
-    21300004: dado_2
-    21300006: dado_3
-    21300008: dado_4
-    21300010: dado_5
+    21300000: sprite_dado_all_0
+    21300002: sprite_dado_all_1
+    21300004: sprite_dado_all_2
+    21300006: sprite_dado_all_3
+    21300008: sprite_dado_all_4
+    21300010: sprite_dado_all_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -51,8 +51,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 42
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -82,129 +83,89 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dado_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 63
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: dado_1
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 64
-        width: 63
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: dado_2
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 64
-        width: 63
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: dado_3
+      name: sprite_dado_all_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 63
-        height: 64
+        width: 103
+        height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dado_4
+      name: sprite_dado_all_1
       rect:
         serializedVersion: 2
-        x: 63
+        x: 135
         y: 0
-        width: 63
-        height: 64
+        width: 103
+        height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dado_5
+      name: sprite_dado_all_2
       rect:
         serializedVersion: 2
-        x: 126
+        x: 270
         y: 0
-        width: 63
-        height: 64
+        width: 103
+        height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sprite_dado_all_3
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 0
+        width: 103
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sprite_dado_all_4
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 103
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sprite_dado_all_5
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 0
+        width: 103
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
