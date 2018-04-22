@@ -9,12 +9,20 @@ abstract public class Token : MonoBehaviour {
     private List<Marker> markers = new List<Marker>();
     private List<Marker> capturable = new List<Marker>();
     public int player;
-    // Use this for initialization
+    public Sprite[] sprites;
+    public static GameObject selector = null;
+
 	virtual protected void Start () {
+        if(selector == null)
+        {
+            selector = (GameObject)Instantiate(Resources.Load("SelectorPrefab"),Vector3.zero,Quaternion.identity);
+            selector.SetActive(false);
+        }
         Debug.Log(this.name + " position: " + transform.position);
         if (player == 2)
         {
-            GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 0.5f);
+            //GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 0.5f);
+            GetComponent<SpriteRenderer>().sprite = sprites[1];
         }
 	}
 	
@@ -22,6 +30,10 @@ abstract public class Token : MonoBehaviour {
 
     private void OnMouseDown()
     {
+        Debug.Log("Foi clicado");
+        Debug.Log("CurrentState: " + (int)TurnManager.CurrentState);
+        Debug.Log("player: " + player);
+
         if ((int)TurnManager.CurrentState == player)
         {
             Debug.Log("Agora é o turno do: " + TurnManager.CurrentState + " e a peça clicada foi: " + player);
@@ -29,6 +41,8 @@ abstract public class Token : MonoBehaviour {
             if (selected == null)
             {
                 selected = this;
+                selector.transform.position = transform.position;
+                selector.SetActive(true);
                 CalculateMovablePositions();
                 ShowMovablePosition();
             }
@@ -66,6 +80,7 @@ abstract public class Token : MonoBehaviour {
         transform.position = v;
         GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside = gameObject;
         selected = null;
+        selector.SetActive(false);
         RemoveMarkers();
 
         if (IsCheck())

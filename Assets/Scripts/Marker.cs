@@ -8,15 +8,16 @@ public class Marker : MonoBehaviour {
     bool capturePosition = false;
     // Use this for initialization
 	void Start () {
+        Token aux;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].IsFree())
         {
             spriteRenderer.color = new Color(0, 1, 0);
-        }else if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside.GetComponent<Token>().player != creator.player)
+        }else if ((aux = GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside.GetComponent<Token>()) &&
+            aux.player != creator.player)
         {
-            Token aux = GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside.GetComponent<Token>();
-            Debug.Log(aux.name+ ": " + aux.player);
-            Debug.Log(creator.name + ": " +  creator.player);
+            GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside.GetComponent<Token>();
             spriteRenderer.color = new Color(1, 0, 0);
             capturePosition = true;
         }
