@@ -24,14 +24,14 @@ public class Peao : Token {
                 if (transform.position.x + 1 < 8)//Direita
                 {
                     // verificar se aquela posição no grid está livre
-                    if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + sign*i].IsFree())
+                    if (GridManager.Tiles[(int)transform.position.x][(int)transform.position.y + sign * i].IsFree())
                     {
                         //adicionar todas possíveis posições andáveis à lista de Vector2Int
-                        movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + sign*i));
+                        movablePositions.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + sign * i));
                     }
                     else
                     {
-                        break;
+                        i++;
                     }
                 }
 
