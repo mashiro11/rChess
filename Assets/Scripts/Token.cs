@@ -19,20 +19,20 @@ abstract public class Token : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-        
-	}
-
     abstract public void CalculateMovablePositions();
 
     private void OnMouseDown()
     {
-        if (selected == null)
+        if ((int)TurnManager.CurrentState == player)
         {
-            selected = this;
-            CalculateMovablePositions();
-            ShowMovablePosition();
+            Debug.Log("Agora é o turno do: " + TurnManager.CurrentState + " e a peça clicada foi: " + player);
+
+            if (selected == null)
+            {
+                selected = this;
+                CalculateMovablePositions();
+                ShowMovablePosition();
+            }
         }
     }
 
@@ -68,5 +68,9 @@ abstract public class Token : MonoBehaviour {
         GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside = gameObject;
         selected = null;
         RemoveMarkers();
+        TurnManager.LastState = TurnManager.CurrentState;
+        Debug.Log("O turno do: " + TurnManager.CurrentState + "acabou");
+        TurnManager.CurrentState = TurnManager.TurnState.DiceRoll;
+        Debug.Log("Agora os dados vão rolar");
     }
 }

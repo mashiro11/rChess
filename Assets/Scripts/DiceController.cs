@@ -17,11 +17,23 @@ public class DiceController : MonoBehaviour {
         }
 	}
 	
-	// Só para testes, vai sair daqui
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space))
+	void Update()
+    {
+        if (TurnManager.CurrentState == TurnManager.TurnState.DiceRoll)
         {
             RollDice();
+
+            if (TurnManager.LastState == TurnManager.TurnState.Player1)
+            {
+                TurnManager.CurrentState = TurnManager.TurnState.Player2;
+                Debug.Log("Agora é a vez do Player 2!");
+            }
+
+            if (TurnManager.LastState == TurnManager.TurnState.Player2)
+            {
+                TurnManager.CurrentState = TurnManager.TurnState.Player1;
+                Debug.Log("Agora é a vez do Player 1!");
+            }
         }
 	}
 
@@ -31,6 +43,8 @@ public class DiceController : MonoBehaviour {
         if (diceFace == 6) diceFace -= 1;
         spriteRenderer.sprite = instance.sprites[diceFace];
         DiceEffect();
+        Debug.Log("O dado terminou de rolar");
+
     }
 
     public static void DiceEffect()
