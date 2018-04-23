@@ -14,7 +14,6 @@ public class Bispo : Token
         Token aux;
         for (int i = 1; i < 8; i++)
         {
-
             // CIMA E DIREITA *********************************************************************
             if (upRightFlag == false && transform.position.x + i < 8 && transform.position.y + i < 8)
             {

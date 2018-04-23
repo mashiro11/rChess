@@ -9,13 +9,15 @@ public class DiceController : MonoBehaviour {
     public static int diceFace = 0;
     public static DiceController instance = null;
     public static Ponei poneiScript;
+    public static Dinossaur dino;
 
 	void Awake () {
         if (instance == null)
         {
             instance = this;
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            poneiScript = GameObject.Find("Ponei").GetComponent<Ponei>();
+            //poneiScript = GameObject.Find("Ponei").GetComponent<Ponei>();
+            dino = GameObject.Find("Dinossour").GetComponent<Dinossaur>();
         }
 	}
 	
@@ -58,23 +60,23 @@ public class DiceController : MonoBehaviour {
                 break;
             case 1:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                poneiScript.PoneiEvent();
+                dino.DinoEvent();
                 break;
             case 2:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                poneiScript.PoneiEvent();
+                dino.DinoEvent();
                 break;
             case 3:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                poneiScript.PoneiEvent();
+                dino.DinoEvent();
                 break;
             case 4:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                poneiScript.PoneiEvent();
+                dino.DinoEvent();
                 break;
             case 5:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                poneiScript.PoneiEvent();
+                dino.DinoEvent();
                 break;
         }
     }
