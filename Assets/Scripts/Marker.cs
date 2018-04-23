@@ -53,7 +53,6 @@ public class Marker : MonoBehaviour {
                 }
             }
             GridManager.Tokens[creator.player - 1].RemoveAt(index);
-            //if rei
             Destroy(tk.gameObject);
             Debug.Log("Objeto " + name + " destruido");
             if(tk.name == "Rei")

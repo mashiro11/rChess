@@ -86,7 +86,10 @@ public class Dinossaur : MonoBehaviour {
 
     void Eat()
     {
+        
         Destroy(GridManager.Tiles[(int)gonnaDie[0].x][(int)gonnaDie[0].y].inside);
+
+
         gonnaDie.RemoveAt(0);
     }
 

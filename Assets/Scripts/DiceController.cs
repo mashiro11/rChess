@@ -56,7 +56,7 @@ public class DiceController : MonoBehaviour {
         switch (diceFace){
             case 0:
                 Debug.Log("Realiza efeito " + (diceFace + 1) + ": PoneyPoop");
-                poneiScript.PoneiEvent();
+                //poneiScript.PoneiEvent();
                 break;
             case 1:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
@@ -72,11 +72,11 @@ public class DiceController : MonoBehaviour {
                 break;
             case 4:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                poneiScript.PoneiEvent();
+                //poneiScript.PoneiEvent();
                 break;
             case 5:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                poneiScript.PoneiEvent();
+                //poneiScript.PoneiEvent();
                 break;
         }
     }
