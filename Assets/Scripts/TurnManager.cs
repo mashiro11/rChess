@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
+    public static int TurnCount;
     public enum TurnState
     {
         Player1 = 1,

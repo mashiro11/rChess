@@ -42,6 +42,8 @@ public class Marker : MonoBehaviour {
     {
         if(capturePosition)
         {
+            // if(rei)
+
             Destroy(GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside);
         }
         creator.MoveTo(transform.position);

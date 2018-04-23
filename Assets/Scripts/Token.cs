@@ -89,6 +89,8 @@ abstract public class Token : MonoBehaviour {
         }
         TurnManager.LastState = TurnManager.CurrentState;
         Debug.Log("O turno do: " + TurnManager.CurrentState + "acabou");
+        TurnManager.TurnCount++;
+        Debug.Log("O turno é: " + TurnManager.TurnCount);
         TurnManager.CurrentState = TurnManager.TurnState.DiceRoll;
         Debug.Log("Agora os dados vão rolar");
     }
