@@ -9,74 +9,103 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1468268871361232}
+  m_RootGameObject: {fileID: 1144735714144382}
   m_IsPrefabParent: 1
---- !u!1 &1468268871361232
+--- !u!1 &1102602077942348
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4728831628676450}
-  - component: {fileID: 114973887357270856}
-  - component: {fileID: 82759063996069750}
+  - component: {fileID: 4779025826432748}
   m_Layer: 0
-  m_Name: DiceController
+  m_Name: PoopSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1924792872767206
+--- !u!1 &1144735714144382
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4305292334269976}
-  - component: {fileID: 212309666907388100}
+  - component: {fileID: 4314565747435758}
+  - component: {fileID: 114968718893786882}
+  - component: {fileID: 82511839402266868}
   m_Layer: 0
-  m_Name: DiceArt
+  m_Name: Ponei
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4305292334269976
+--- !u!1 &1888508005241788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4706344988264390}
+  - component: {fileID: 212669043357205972}
+  m_Layer: 0
+  m_Name: PoneiArt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4314565747435758
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1924792872767206}
+  m_GameObject: {fileID: 1144735714144382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4706344988264390}
+  - {fileID: 4779025826432748}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4706344988264390
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888508005241788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4728831628676450}
+  m_Father: {fileID: 4314565747435758}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4728831628676450
+--- !u!4 &4779025826432748
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1468268871361232}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14, y: 0, z: 0}
+  m_GameObject: {fileID: 1102602077942348}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.17, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4305292334269976}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Children: []
+  m_Father: {fileID: 4314565747435758}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82759063996069750
+--- !u!82 &82511839402266868
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1468268871361232}
+  m_GameObject: {fileID: 1144735714144382}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -151,31 +180,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114973887357270856
+--- !u!114 &114968718893786882
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1468268871361232}
+  m_GameObject: {fileID: 1144735714144382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c835ed7dc4b235438043298b55e4380, type: 3}
+  m_Script: {fileID: 11500000, guid: fb925e524d6453e48a51acc4737ad0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300010, guid: b5aff1059552da74d8803b812d3da8bc, type: 3}
-  - {fileID: 21300008, guid: b5aff1059552da74d8803b812d3da8bc, type: 3}
-  - {fileID: 21300006, guid: b5aff1059552da74d8803b812d3da8bc, type: 3}
-  - {fileID: 21300004, guid: b5aff1059552da74d8803b812d3da8bc, type: 3}
-  - {fileID: 21300002, guid: b5aff1059552da74d8803b812d3da8bc, type: 3}
-  - {fileID: 21300000, guid: b5aff1059552da74d8803b812d3da8bc, type: 3}
-  diceSound: {fileID: 8300000, guid: 4bd6397a7135fa4499ed358eaeb703c2, type: 3}
---- !u!212 &212309666907388100
+  poopSpawnPositions: []
+  spawnPoop: {fileID: 4779025826432748}
+  startPosition: {x: 20, y: 5, z: 0}
+  endPosition: {x: -6, y: 5, z: 0}
+  positionSpeed: 5
+  rotationSpeed: 3
+  ponyLaughSound: {fileID: 8300000, guid: 1f3e0e3009bf17742bf2f644da03df84, type: 3}
+--- !u!212 &212669043357205972
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1924792872767206}
+  m_GameObject: {fileID: 1888508005241788}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -203,13 +231,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2146200275
   m_SortingLayer: 3
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: b5aff1059552da74d8803b812d3da8bc, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 503f3fd7e407d9c4d813d08cefc51ded, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.452381, y: 2.452381}
+  m_Size: {x: 5.047619, y: 4.7619047}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
