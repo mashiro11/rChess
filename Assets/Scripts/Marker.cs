@@ -42,11 +42,25 @@ public class Marker : MonoBehaviour {
     {
         if(capturePosition)
         {
-            // if(rei)
-
-            Destroy(GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside);
+            Token tk = GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside.GetComponent<Token>();
+            int index = 0;
+            for (int i = 0; i < GridManager.Tokens[creator.player - 1].Count; i++)
+            {
+                if (GridManager.Tokens[creator.player - 1][i] == tk)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            GridManager.Tokens[creator.player - 1].RemoveAt(index);
+            //if rei
+            Destroy(tk.gameObject);
+            Debug.Log("Objeto " + name + " destruido");
+            if(tk.name == "Rei")
+            {
+                GameManager.EndGame(creator.player);
+            }
         }
         creator.MoveTo(transform.position);
-
     }
 }

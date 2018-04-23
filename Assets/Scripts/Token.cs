@@ -83,10 +83,10 @@ abstract public class Token : MonoBehaviour {
         selector.SetActive(false);
         RemoveMarkers();
 
-        if (IsCheck())
-        {
-            Debug.Log("Xeque!");
-        }
+        //if (IsCheck())
+        //{
+        //    Debug.Log("Xeque!");
+        //}
         TurnManager.LastState = TurnManager.CurrentState;
         Debug.Log("O turno do: " + TurnManager.CurrentState + "acabou");
         TurnManager.TurnCount++;
