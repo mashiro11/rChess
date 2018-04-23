@@ -6,9 +6,10 @@ public class MusicController : MonoBehaviour
 {
 
     public AudioClip[] musicArray;
+    public float volume = 0.4f;
+
+    private AudioSource aSource;
     private bool looping = false;
-    AudioSource aSource;
-    float volume = 0.4f;
 
     private void Awake()
     {
@@ -31,6 +32,4 @@ public class MusicController : MonoBehaviour
             aSource.Play();
         }
     }
-
-
 }

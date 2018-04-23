@@ -10,12 +10,19 @@ public class Ponei : MonoBehaviour
     public Vector3 endPosition;
     public float positionSpeed = 5;
     public float rotationSpeed = 3;
+
+    public AudioClip ponyLaughSound;
+    private AudioSource aSource;
+
     private bool canWalk = false;
 
     private void Start()
     {
         transform.position = startPosition;
         poopSpawnPositions = new List<Vector3>();
+
+        aSource = GetComponent<AudioSource>();
+        aSource.clip = ponyLaughSound;
     }
 
     private void Update()
@@ -35,6 +42,7 @@ public class Ponei : MonoBehaviour
         {
             canWalk = false;
             transform.position = startPosition;
+            aSource.Play();
         }
     }
 

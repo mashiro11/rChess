@@ -11,17 +11,26 @@ public class DiceController : MonoBehaviour {
     public static Ponei poneiScript;
     public static Dinossaur dino;
 
-	void Awake () {
+    public AudioClip diceSound;
+    private static AudioSource aSource;
+
+    void Awake () {
         if (instance == null)
         {
             instance = this;
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            //poneiScript = GameObject.Find("Ponei").GetComponent<Ponei>();
+            poneiScript = GameObject.Find("Ponei").GetComponent<Ponei>();
             dino = GameObject.Find("Dinossour").GetComponent<Dinossaur>();
         }
 	}
-	
-	void Update()
+
+    private void Start()
+    {
+        aSource = GetComponent<AudioSource>();
+        aSource.clip = diceSound;
+    }
+
+    void Update()
     {
         if (TurnManager.CurrentState == TurnManager.TurnState.DiceRoll)
         {
@@ -47,6 +56,7 @@ public class DiceController : MonoBehaviour {
         if (diceFace == 6) diceFace -= 1;
         spriteRenderer.sprite = instance.sprites[diceFace];
         DiceEffect();
+        aSource.Play();
         Debug.Log("O dado terminou de rolar");
 
     }
@@ -56,7 +66,7 @@ public class DiceController : MonoBehaviour {
         switch (diceFace){
             case 0:
                 Debug.Log("Realiza efeito " + (diceFace + 1) + ": PoneyPoop");
-                //poneiScript.PoneiEvent();
+                poneiScript.PoneiEvent();
                 break;
             case 1:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
@@ -72,11 +82,11 @@ public class DiceController : MonoBehaviour {
                 break;
             case 4:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                //poneiScript.PoneiEvent();
+                poneiScript.PoneiEvent();
                 break;
             case 5:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                //poneiScript.PoneiEvent();
+                poneiScript.PoneiEvent();
                 break;
         }
     }
