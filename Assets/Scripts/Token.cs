@@ -74,8 +74,28 @@ abstract public class Token : MonoBehaviour {
         selected = null;
         movablePositions.Clear();
     }
-    public void MoveTo(Vector3 v)
+    public void MoveTo(Vector3 v, bool capturePosition)
     {
+        if (capturePosition)
+        {
+            Token tk = GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside.GetComponent<Token>();
+            int index = 0;
+            for (int i = 0; i < GridManager.Tokens[player - 1].Count; i++)
+            {
+                if (GridManager.Tokens[player - 1][i] == tk)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            GridManager.Tokens[player - 1].RemoveAt(index);
+            Destroy(tk.gameObject);
+            Debug.Log("Objeto " + name + " destruido");
+            if (tk.name == "Rei")
+            {
+                GameManager.EndGame(player);
+            }
+        }
         GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside = null;
         transform.position = v;
         GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside = gameObject;
