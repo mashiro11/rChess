@@ -11,6 +11,7 @@ abstract public class Token : MonoBehaviour {
     public int player;
     public Sprite[] sprites;
     public static GameObject selector = null;
+    public static bool canplay = false;
 
     public GameObject sfxGameObject;
     public SFXcontroller sfxScript;
@@ -40,6 +41,7 @@ abstract public class Token : MonoBehaviour {
 
     private void OnMouseDown()
     {
+        if (!canplay) return;
         // SOM DE SELECIONAR
         sfxScript.PlaySound(0);
         Debug.Log("Foi clicado");
