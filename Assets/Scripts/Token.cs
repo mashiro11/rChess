@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 abstract public class Token : MonoBehaviour {
-
+    
     protected static Token selected = null;
     protected List<Vector2Int> movablePositions = new List<Vector2Int>();
     private List<Marker> markers = new List<Marker>();
@@ -12,7 +12,18 @@ abstract public class Token : MonoBehaviour {
     public Sprite[] sprites;
     public static GameObject selector = null;
 
-	virtual protected void Start () {
+    public GameObject sfxGameObject;
+    public SFXcontroller sfxScript;
+
+    private void Awake()
+    {
+        //MusicController musicController = FindObjectOfType<MusicController>();
+        sfxGameObject = GameObject.Find("SFXController");
+        sfxScript = sfxGameObject.GetComponent<SFXcontroller>();
+    }
+
+    virtual protected void Start ()
+    {
         if(selector == null)
         {
             selector = (GameObject)Instantiate(Resources.Load("SelectorPrefab"),Vector3.zero,Quaternion.identity);
@@ -21,7 +32,6 @@ abstract public class Token : MonoBehaviour {
         Debug.Log(this.name + " position: " + transform.position);
         if (player == 2)
         {
-            //GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 0.5f);
             GetComponent<SpriteRenderer>().sprite = sprites[1];
         }
 	}
@@ -30,6 +40,8 @@ abstract public class Token : MonoBehaviour {
 
     private void OnMouseDown()
     {
+        // SOM DE SELECIONAR
+        sfxScript.PlaySound(0);
         Debug.Log("Foi clicado");
         Debug.Log("CurrentState: " + (int)TurnManager.CurrentState);
         Debug.Log("player: " + player);
@@ -78,7 +90,10 @@ abstract public class Token : MonoBehaviour {
     {
         if (capturePosition)
         {
-            Token tk = GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside.GetComponent<Token>();
+            Token tk = GridManager.Tiles[(int)v.x][(int)v.y].inside.GetComponent<Token>();
+            Debug.Log("Token la dentro: " + tk.name);
+
+            //Encontra a peça no vetor e remove
             int index = 0;
             for (int i = 0; i < GridManager.Tokens[player - 1].Count; i++)
             {
@@ -89,13 +104,26 @@ abstract public class Token : MonoBehaviour {
                 }
             }
             GridManager.Tokens[player - 1].RemoveAt(index);
-            Destroy(tk.gameObject);
-            Debug.Log("Objeto " + name + " destruido");
-            if (tk.name == "Rei")
+            //
+            
+            // SOM DE DESTRUIR 
+            sfxScript.PlaySound(1);
+            Debug.Log("Objeto " + tk.name + " destruido");
+            if (tk.name.Contains("Rei"))
             {
                 GameManager.EndGame(player);
             }
+            Destroy(tk.gameObject);
+            
         }
+
+        else
+        {
+            // SOM DE MOVER
+            sfxScript.PlaySound(2);
+        }
+
+
         GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside = null;
         transform.position = v;
         GridManager.Tiles[(int)transform.position.x][(int)transform.position.y].inside = gameObject;

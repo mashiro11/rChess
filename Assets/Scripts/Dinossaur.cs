@@ -62,7 +62,7 @@ public class Dinossaur : MonoBehaviour {
                 inc.z = Mathf.Clamp(inc.z, dest.z, transform.position.z);
                 transform.position = inc;
 
-                Debug.Log("Dest: " + dest);
+                //Debug.Log("Dest: " + dest);
                 if (Vector3.Distance( transform.position, dest) < 0.01f)
                 {
                     currentState = DinoStates.EAT;
@@ -86,23 +86,36 @@ public class Dinossaur : MonoBehaviour {
 
     void Eat()
     {
-        
-        Destroy(GridManager.Tiles[(int)gonnaDie[0].x][(int)gonnaDie[0].y].inside);
-
-
-        gonnaDie.RemoveAt(0);
+        if (gonnaDie.Count > 0)
+        {
+            Destroy(GridManager.Tiles[(int)gonnaDie[0].x][(int)gonnaDie[0].y].inside);
+            gonnaDie.RemoveAt(0);
+        }
     }
 
     void DieLottery()
     {
-        for (int i = 0; i < 2; i++)
+        if (GridManager.Tokens[0].Count > 0 &&
+            GridManager.Tokens[1].Count > 0)
         {
-            int sorteado = Random.Range(0, GridManager.Tokens[i].Count - 1);
-            gonnaDie.Add(GridManager.Tokens[i][sorteado].transform.position);
+            for (int i = 0; i < 2; i++)
+            {
+                int sorteado;
+                Token tk;
+                do
+                {
+                    sorteado = Random.Range(0, GridManager.Tokens[i].Count - 1);
+                    tk = GridManager.Tokens[i][sorteado];
+                    Debug.Log("sorteado: " + tk.name);
+                } while (tk.name.Contains("Rei"));
+                Debug.Log("Final: " + tk.name);
+                gonnaDie.Add(tk.transform.position);
+
+                SortTargets();
+            }
+            Debug.Log("sorteado: " + gonnaDie[0]);
+            Debug.Log("sorteado: " + gonnaDie[1]);
         }
-        SortTargets();
-        Debug.Log("sorteado: " + gonnaDie[0]);
-        Debug.Log("sorteado: " + gonnaDie[1]);
     }
 
     public void DinoEvent()

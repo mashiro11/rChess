@@ -8,7 +8,7 @@ public class DestroyByTurn : MonoBehaviour
 
     private void Update()
     {
-        if (TurnManager.TurnCount - spawnTurn > 2)
+        if (TurnManager.TurnCount - spawnTurn > 1)
         {
             Destroy(gameObject);
         }

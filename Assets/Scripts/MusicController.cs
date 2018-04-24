@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
+    //public static MusicController musicController = null;
 
+    private AudioSource aSourceMusic;
     public AudioClip[] musicArray;
-    public float volume = 0.4f;
 
-    private AudioSource aSource;
+    public float volume = 0.4f;
     private bool looping = false;
 
     private void Awake()
     {
-        aSource = GetComponent<AudioSource>();
+        aSourceMusic = GetComponent<AudioSource>();
 
-        aSource.volume = volume;
-        aSource.clip = musicArray[0];
-        aSource.loop = false;
-        aSource.Play();
+        aSourceMusic.volume = volume;
+        aSourceMusic.clip = musicArray[0];
+        aSourceMusic.loop = false;
+        aSourceMusic.Play();
     }
 
     private void Update()
     {
-        aSource.volume = volume;
-        if (looping == false && aSource.isPlaying == false)
+        aSourceMusic.volume = volume;
+        if (looping == false && aSourceMusic.isPlaying == false)
         {
             looping = true;
-            aSource.clip = musicArray[1];
-            aSource.loop = true;
-            aSource.Play();
+            aSourceMusic.clip = musicArray[1];
+            aSourceMusic.loop = true;
+            aSourceMusic.Play();
         }
     }
 }

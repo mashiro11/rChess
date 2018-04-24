@@ -74,19 +74,19 @@ public class DiceController : MonoBehaviour {
                 break;
             case 2:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                dino.DinoEvent();
+                //dino.DinoEvent();
                 break;
             case 3:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                dino.DinoEvent();
+                //dino.DinoEvent();
                 break;
             case 4:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                poneiScript.PoneiEvent();
+                //poneiScript.PoneiEvent();
                 break;
             case 5:
                 Debug.Log("Realiza efeito " + (diceFace + 1));
-                poneiScript.PoneiEvent();
+                //poneiScript.PoneiEvent();
                 break;
         }
     }

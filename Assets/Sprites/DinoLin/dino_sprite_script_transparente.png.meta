@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: cc5850fd24702c542bddb56de231eaba
-timeCreated: 1524443383
+guid: 05dbc2b123eeee74f91f87c8cdec063d
+timeCreated: 1524520730
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: dino_spritesheet_0
-    21300002: dino_spritesheet_1
-    21300004: dino_spritesheet_2
-    21300006: dino_spritesheet_3
-    21300008: dino_spritesheet_4
-    21300010: dino_spritesheet_5
-    21300012: dino_spritesheet_6
-    21300014: dino_spritesheet_7
-    21300016: dino_spritesheet_8
-    21300018: dino_spritesheet_9
-    21300020: dino_spritesheet_10
+    21300000: dino_sprite_script_transparente_0
+    21300002: dino_sprite_script_transparente_1
+    21300004: dino_sprite_script_transparente_2
+    21300006: dino_sprite_script_transparente_3
+    21300008: dino_sprite_script_transparente_4
+    21300010: dino_sprite_script_transparente_5
+    21300012: dino_sprite_script_transparente_6
+    21300014: dino_sprite_script_transparente_7
+    21300016: dino_sprite_script_transparente_8
+    21300018: dino_sprite_script_transparente_9
+    21300020: dino_sprite_script_transparente_10
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,47 +82,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,13 +92,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dino_spritesheet_0
+      name: dino_sprite_script_transparente_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,13 +106,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dino_spritesheet_1
+      name: dino_sprite_script_transparente_1
       rect:
         serializedVersion: 2
         x: 600
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,13 +120,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dino_spritesheet_2
+      name: dino_sprite_script_transparente_2
       rect:
         serializedVersion: 2
         x: 1200
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,13 +134,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dino_spritesheet_3
+      name: dino_sprite_script_transparente_3
       rect:
         serializedVersion: 2
         x: 1800
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,13 +148,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dino_spritesheet_4
+      name: dino_sprite_script_transparente_4
       rect:
         serializedVersion: 2
         x: 2400
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,13 +162,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dino_spritesheet_5
+      name: dino_sprite_script_transparente_5
       rect:
         serializedVersion: 2
         x: 3000
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,13 +176,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dino_spritesheet_6
+      name: dino_sprite_script_transparente_6
       rect:
         serializedVersion: 2
         x: 3600
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,13 +190,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dino_spritesheet_7
+      name: dino_sprite_script_transparente_7
       rect:
         serializedVersion: 2
         x: 4200
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,13 +204,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dino_spritesheet_8
+      name: dino_sprite_script_transparente_8
       rect:
         serializedVersion: 2
         x: 4800
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,13 +218,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dino_spritesheet_9
+      name: dino_sprite_script_transparente_9
       rect:
         serializedVersion: 2
         x: 5400
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,13 +232,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dino_spritesheet_10
+      name: dino_sprite_script_transparente_10
       rect:
         serializedVersion: 2
         x: 6000
         y: 0
         width: 600
-        height: 272
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
